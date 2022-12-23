@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/users")
+
 public class UserResource {
 
     @GetMapping
     public ResponseEntity<User> ok(){
         User u = new User(1L, "carlos", "carlos@ibm.com", "123132", "12345");
+
 
         return ResponseEntity.ok().body(u);
     }
