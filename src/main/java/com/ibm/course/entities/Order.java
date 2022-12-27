@@ -3,6 +3,8 @@ package com.ibm.course.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.ibm.course.entities.enums.OrderStatus;
+
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -24,6 +26,14 @@ public class Order implements Serializable {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private User client;
+
+    
+    private OrderStatus orderStatus;
+
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
 
     public Order() {
     }
@@ -65,9 +75,15 @@ public class Order implements Serializable {
         this.client = client;
     }
 
-    public Order(Long id, Instant moment, User client) {
+    public Order(Long id, Instant moment, OrderStatus orderStatus , User client) {
         this.id = id;
         this.moment = moment;
         this.client = client;
+        this.orderStatus = orderStatus;
+    }
+
+    public void setOrderStatus(OrderStatus orderStatus) {
+        if(orderStatus != null)
+        this.orderStatus = orderStatus;
     }
 }

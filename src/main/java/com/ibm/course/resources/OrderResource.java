@@ -1,4 +1,4 @@
-package com.ibm.course.entities.resources;
+package com.ibm.course.resources;
 
 import com.ibm.course.entities.Order;
 import com.ibm.course.services.OrderService;
