@@ -2,7 +2,6 @@ package com.ibm.course.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +21,6 @@ public class User implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
-
 
     public User() {
     }

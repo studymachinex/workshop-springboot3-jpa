@@ -1,12 +1,8 @@
 package com.ibm.course.entities;
 
-
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ibm.course.entities.enums.OrderStatus;
-
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
@@ -26,10 +22,8 @@ public class Order implements Serializable {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private User client;
-
     
     private OrderStatus orderStatus;
-
 
     public OrderStatus getOrderStatus() {
         return orderStatus;

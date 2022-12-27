@@ -1,9 +1,7 @@
 package com.ibm.course.services;
 
 import com.ibm.course.entities.Category;
-import com.ibm.course.entities.User;
 import com.ibm.course.repositories.CategoryRepository;
-import com.ibm.course.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
