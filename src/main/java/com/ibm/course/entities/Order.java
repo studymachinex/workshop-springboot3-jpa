@@ -36,6 +36,19 @@ public class Order implements Serializable {
 
     private OrderStatus orderStatus;
 
+    //Cascadetype.all mapeia o id de pedido e pagamento para que sejam os mesmos
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    private Payment payment;
+
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+
     public OrderStatus getOrderStatus() {
         return orderStatus;
     }
