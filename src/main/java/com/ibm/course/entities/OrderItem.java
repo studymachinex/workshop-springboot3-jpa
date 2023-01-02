@@ -10,6 +10,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_order_item")
 public class OrderItem {
+    
     private static final long serialVersionUID = 1L;
 
     @EmbeddedId
@@ -33,6 +34,7 @@ public class OrderItem {
     public void setOrder(Order order){
         id.setOrder(order);
     }
+
     public Product getProduct() {
         return id.getProduct();
     }
