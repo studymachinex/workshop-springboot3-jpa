@@ -2,6 +2,8 @@ package com.ibm.course.services;
 
 import com.ibm.course.entities.User;
 import com.ibm.course.repositories.UserRepository;
+import com.ibm.course.services.exceptions.ResourceNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -19,7 +21,7 @@ public class UserService {
 
     public User getById(Long id) {
         Optional<User> user = repository.findById(id);
-        return user.get();
+        return user.orElseThrow( () -> new ResourceNotFoundException(id) ) ;
     }
     public User postUser(User user){
         return repository.save(user);
